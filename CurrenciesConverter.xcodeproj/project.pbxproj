@@ -3,27 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502C0B3AB196798FF904B3B1 /* Pods_CurrenciesConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B7388990AFA889FBAC3367 /* Pods_CurrenciesConverter.framework */; };
+		5C1F68FA278C7B54002E064E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1F68F9278C7B54002E064E /* MainViewModel.swift */; };
+		5C3332CA277C9870004D4F7B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3332C9277C9870004D4F7B /* SecondViewController.swift */; };
 		5C8D2E96277B353900C47751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D2E95277B353900C47751 /* AppDelegate.swift */; };
 		5C8D2E98277B353900C47751 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D2E97277B353900C47751 /* SceneDelegate.swift */; };
 		5C8D2E9A277B353900C47751 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D2E99277B353900C47751 /* ViewController.swift */; };
-		5C8D2E9D277B353900C47751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C8D2E9B277B353900C47751 /* Main.storyboard */; };
 		5C8D2E9F277B353B00C47751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C8D2E9E277B353B00C47751 /* Assets.xcassets */; };
-		5C8D2EA2277B353B00C47751 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C8D2EA0277B353B00C47751 /* LaunchScreen.storyboard */; };
+		5C8D2EAB277B3ED900C47751 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D2EAA277B3ED900C47751 /* TableViewCell.swift */; };
+		5C8D2EAE277B7B0000C47751 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D2EAD277B7B0000C47751 /* Model.swift */; };
+		5C8D2EB1277B7C3A00C47751 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D2EB0277B7C3A00C47751 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C1F68F9278C7B54002E064E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		5C3332C9277C9870004D4F7B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		5C8D2E92277B353900C47751 /* CurrenciesConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrenciesConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C8D2E95277B353900C47751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C8D2E97277B353900C47751 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5C8D2E99277B353900C47751 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5C8D2E9C277B353900C47751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C8D2E9E277B353B00C47751 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5C8D2EA1277B353B00C47751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C8D2EA3277B353B00C47751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C8D2EAA277B3ED900C47751 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		5C8D2EAD277B7B0000C47751 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		5C8D2EB0277B7C3A00C47751 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		84B7388990AFA889FBAC3367 /* Pods_CurrenciesConverter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrenciesConverter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8B48D85EEE35DAB13E7A896 /* Pods-CurrenciesConverter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrenciesConverter.debug.xcconfig"; path = "Target Support Files/Pods-CurrenciesConverter/Pods-CurrenciesConverter.debug.xcconfig"; sourceTree = "<group>"; };
+		F8F7C6551AEDD094F2F4C989 /* Pods-CurrenciesConverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrenciesConverter.release.xcconfig"; path = "Target Support Files/Pods-CurrenciesConverter/Pods-CurrenciesConverter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502C0B3AB196798FF904B3B1 /* Pods_CurrenciesConverter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C1F68F1278C6B2D002E064E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5C8D2E99277B353900C47751 /* ViewController.swift */,
+				5C1F68F9278C7B54002E064E /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5C1F68F6278C74FC002E064E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C8D2EAD277B7B0000C47751 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C1F68F7278C7B2B002E064E /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				5C3332C9277C9870004D4F7B /* SecondViewController.swift */,
+			);
+			path = Second;
+			sourceTree = "<group>";
+		};
 		5C8D2E89277B353900C47751 = {
 			isa = PBXGroup;
 			children = (
 				5C8D2E94277B353900C47751 /* CurrenciesConverter */,
 				5C8D2E93277B353900C47751 /* Products */,
+				F7F5FA9EC049E61AA6D6D624 /* Pods */,
+				AD7DBD006F884C939BBE2A69 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +96,32 @@
 			children = (
 				5C8D2E95277B353900C47751 /* AppDelegate.swift */,
 				5C8D2E97277B353900C47751 /* SceneDelegate.swift */,
-				5C8D2E99277B353900C47751 /* ViewController.swift */,
-				5C8D2E9B277B353900C47751 /* Main.storyboard */,
+				5C1F68F1278C6B2D002E064E /* Main */,
+				5C1F68F7278C7B2B002E064E /* Second */,
+				5C8D2EB0277B7C3A00C47751 /* NetworkManager.swift */,
+				5C1F68F6278C74FC002E064E /* Model */,
+				5C8D2EAA277B3ED900C47751 /* TableViewCell.swift */,
 				5C8D2E9E277B353B00C47751 /* Assets.xcassets */,
-				5C8D2EA0277B353B00C47751 /* LaunchScreen.storyboard */,
 				5C8D2EA3277B353B00C47751 /* Info.plist */,
 			);
 			path = CurrenciesConverter;
+			sourceTree = "<group>";
+		};
+		AD7DBD006F884C939BBE2A69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84B7388990AFA889FBAC3367 /* Pods_CurrenciesConverter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7F5FA9EC049E61AA6D6D624 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8B48D85EEE35DAB13E7A896 /* Pods-CurrenciesConverter.debug.xcconfig */,
+				F8F7C6551AEDD094F2F4C989 /* Pods-CurrenciesConverter.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C8D2EA6277B353B00C47751 /* Build configuration list for PBXNativeTarget "CurrenciesConverter" */;
 			buildPhases = (
+				667ACE226D87E2223B6A11D5 /* [CP] Check Pods Manifest.lock */,
 				5C8D2E8E277B353900C47751 /* Sources */,
 				5C8D2E8F277B353900C47751 /* Frameworks */,
 				5C8D2E90277B353900C47751 /* Resources */,
+				AE707B3540A17A1B7197363D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,45 +183,71 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C8D2EA2277B353B00C47751 /* LaunchScreen.storyboard in Resources */,
 				5C8D2E9F277B353B00C47751 /* Assets.xcassets in Resources */,
-				5C8D2E9D277B353900C47751 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		667ACE226D87E2223B6A11D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CurrenciesConverter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE707B3540A17A1B7197363D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrenciesConverter/Pods-CurrenciesConverter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrenciesConverter/Pods-CurrenciesConverter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CurrenciesConverter/Pods-CurrenciesConverter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5C8D2E8E277B353900C47751 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C8D2EB1277B7C3A00C47751 /* NetworkManager.swift in Sources */,
+				5C8D2EAE277B7B0000C47751 /* Model.swift in Sources */,
 				5C8D2E9A277B353900C47751 /* ViewController.swift in Sources */,
+				5C8D2EAB277B3ED900C47751 /* TableViewCell.swift in Sources */,
+				5C3332CA277C9870004D4F7B /* SecondViewController.swift in Sources */,
 				5C8D2E96277B353900C47751 /* AppDelegate.swift in Sources */,
 				5C8D2E98277B353900C47751 /* SceneDelegate.swift in Sources */,
+				5C1F68FA278C7B54002E064E /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		5C8D2E9B277B353900C47751 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5C8D2E9C277B353900C47751 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5C8D2EA0277B353B00C47751 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5C8D2EA1277B353B00C47751 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5C8D2EA4277B353B00C47751 /* Debug */ = {
@@ -283,6 +368,7 @@
 		};
 		5C8D2EA7277B353B00C47751 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8B48D85EEE35DAB13E7A896 /* Pods-CurrenciesConverter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +388,7 @@
 		};
 		5C8D2EA8277B353B00C47751 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8F7C6551AEDD094F2F4C989 /* Pods-CurrenciesConverter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
