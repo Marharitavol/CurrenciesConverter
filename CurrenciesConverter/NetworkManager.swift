@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkManager {
     
-    func fetchData(url: String, completion: @escaping (_ answer: [Model])->()) {
+    func fetchData(url: String, completion: @escaping (_ answer: [Currency])->()) {
         
         let urlString = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json"
         
@@ -22,7 +22,7 @@ class NetworkManager {
             guard let data = data else { return }
             
             do {
-                let apiResponse = try JSONDecoder().decode([Model].self, from: data)
+                let apiResponse = try JSONDecoder().decode([Currency].self, from: data)
                 let answers = apiResponse
                 completion(answers)
             } catch let error {

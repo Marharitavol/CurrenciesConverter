@@ -11,44 +11,62 @@ import SnapKit
 class ViewController: UIViewController {
     
     var tableView = UITableView()
-    let urlString = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json"
-    let networkManager = NetworkManager()
-    var currencies = [Model]()
     let button = UIButton(type: .system)
+    let mainViewModel: MainViewModel
+    
+    init(mainViewModel: MainViewModel) {
+        self.mainViewModel = mainViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        apiResponse()
         button.addTarget(self, action: #selector(setupConverterButton), for: .touchUpInside)
         navigationItem.title = "Currencies"
+        waitingCallBack()
     }
     
-    func apiResponse() {
-        networkManager.fetchData(url: urlString) { (answers) in
-            self.currencies = answers
-            self.filter()
+    //    func apiResponse() {
+    //        networkManager.fetchData(url: urlString) { (answers) in
+    //            self.currencies = answers
+    //            self.filter()
+    //            DispatchQueue.main.async {
+    //                self.tableView.reloadData()
+    //            }
+    //        }
+    //    }
+    
+    private func waitingCallBack() {
+        mainViewModel.callback = {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
     
-    func filter() {
-        currencies = currencies.filter({ (currency) -> Bool in
-            if currency.cc == "USD" || currency.cc == "EUR" {
-                return true
-            } else {
-                return false
-            }
-        })
-    }
+    //    func filter() {
+    //        currencies = currencies.filter({ (currency) -> Bool in
+    //            if currency.cc == "USD" || currency.cc == "EUR" {
+    //                return true
+    //            } else {
+    //                return false
+    //            }
+    //        })
+    //    }
     
     @objc func setupConverterButton() {
-        var array = currencies
-        array.insert(Model(rate: 1.0, cc: "UAH"), at: 0)
-        let secondVC = SecondViewController(pickerData: array)
+        
+//        var array = mainViewModel.currencies
+//        array.insert(Currency(rate: 1.0, cc: "UAH"), at: 0)
+        //let secondViewModel = SecondViewModel(currency: array)
+        let secondVC = SecondViewController(secondViewModel: mainViewModel.createSecondViewModel())
         navigationController?.pushViewController(secondVC, animated: true)
     }
 }
@@ -58,7 +76,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func setupTableView() {
         view.addSubview(tableView)
         view.backgroundColor = .white
-//        tableView.frame = view.bounds
+        //        tableView.frame = view.bounds
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = false
@@ -80,15 +98,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currencies.count
+        return mainViewModel.numberOfElement()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifierCell) as! TableViewCell
-        let currency = currencies[indexPath.row]
-        let rate = currency.rate
+        let rate = mainViewModel.rowRate(index: indexPath.row)
         let shortRate = round(rate * 100)/100
-        let cc = currency.cc
+        let cc = mainViewModel.rowCc(index: indexPath.row)
         cell.nameLabel.text = cc
         cell.currentCourse.text = "\(shortRate)"
         return cell

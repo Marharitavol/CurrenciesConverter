@@ -15,15 +15,16 @@ class SecondViewController: UIViewController {
     var topCurrencyRate = UITextField()
     var bottomCurrencyCc = UILabel()
     var bottomCurrencyRate = UITextField()
+    let secondViewModel: SecondViewModel
     
     var firstRate = Double()
     var secondRate = Double()
     
     
-    let pickerData: [Model]
+    //let pickerData: [Currency]
     
-    init(pickerData: [Model]) {
-        self.pickerData = pickerData
+    init(secondViewModel: SecondViewModel) {
+        self.secondViewModel = secondViewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -39,26 +40,28 @@ class SecondViewController: UIViewController {
         bottomCurrencyRate.isUserInteractionEnabled = false
         topCurrencyRate.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
         setupSecondScreen()
-        firstRate = pickerData[0].rate
-        secondRate = pickerData[0].rate
+        firstRate = secondViewModel.getDefaultRate()
+        secondRate = secondViewModel.getDefaultRate()
         
     }
     
-    func calculate(rate1: Double, rate2: Double, value: Double) -> Double {
-        let result = rate1 * value / rate2
-        return result
-    }
+
     
     @objc func editingChanged(_ textField: UITextField) {
-        
+        calculateRate()
+    }
+    
+    func calculateRate() {
         guard let value = Double(topCurrencyRate.text ?? "") else {
             bottomCurrencyRate.text = "\(0)"
             return
         }
-        let result = calculate(rate1: firstRate, rate2: secondRate, value: value)
+        let result = secondViewModel.calculate(rate1: firstRate, rate2: secondRate, value: value)
         let rate = round(result * 100)/100
         bottomCurrencyRate.text = "\(rate)"
     }
+    
+    
     
     func setupSecondScreen() {
         view.backgroundColor = .white
@@ -66,7 +69,7 @@ class SecondViewController: UIViewController {
         topCurrencyRate.keyboardType = .numberPad
         
         view.addSubview(topCurrencyCc)
-        topCurrencyCc.text = pickerData.first?.cc
+        topCurrencyCc.text = secondViewModel.getFirst()
         topCurrencyCc.snp.makeConstraints { (make) in
             make.left.equalToSuperview().inset(15)
             make.top.equalToSuperview().inset(107)
@@ -87,7 +90,7 @@ class SecondViewController: UIViewController {
         }
         
         view.addSubview(bottomCurrencyCc)
-        bottomCurrencyCc.text = pickerData.first?.cc
+        bottomCurrencyCc.text = secondViewModel.getFirst()
         bottomCurrencyCc.snp.makeConstraints { (make) in
             make.left.equalToSuperview().inset(15)
             make.top.equalTo(picker.snp.bottom).inset(-7)
@@ -119,21 +122,22 @@ extension SecondViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        return secondViewModel.numberOfElement()
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row].cc
+        return secondViewModel.rowCc(index: row)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if component == 0 {
-            topCurrencyCc.text = pickerData[row].cc
-            firstRate = pickerData[row].rate
+            topCurrencyCc.text = secondViewModel.rowCc(index: row)
+            firstRate = secondViewModel.rowRate(index: row)
             print(firstRate)
         } else {
-            bottomCurrencyCc.text = pickerData[row].cc
-            secondRate = pickerData[row].rate
+            bottomCurrencyCc.text = secondViewModel.rowCc(index: row)
+            secondRate = secondViewModel.rowRate(index: row)
         }
+        calculateRate()
     }
 }
