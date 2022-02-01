@@ -66,7 +66,7 @@ class ViewController: UIViewController {
 //        var array = mainViewModel.currencies
 //        array.insert(Currency(rate: 1.0, cc: "UAH"), at: 0)
         //let secondViewModel = SecondViewModel(currency: array)
-        let secondVC = SecondViewController(secondViewModel: mainViewModel.createSecondViewModel())
+        let secondVC = SecondViewController(secondViewModel: mainViewModel.createSecondViewModel( ))
         navigationController?.pushViewController(secondVC, animated: true)
     }
 }
